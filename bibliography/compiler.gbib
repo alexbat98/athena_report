@@ -54,5 +54,15 @@
         "lang": "english",
         "year": "2018",
         "title": "Glow: Graph Lowering Compiler Techniques for Neural Networks"
+    },
+    {
+        "author": "Bruno Cardaso Lopes, Rafael Auler",
+        "id": "llvm_book",
+        "lang": "english",
+        "year": "2014",
+        "title": "Getting Started with LLVM Core Libraries",
+        "publisher": "Packt Publishing",
+        "pages": "314",
+        "city": "Birmingham"
     }
 ]
