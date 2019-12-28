@@ -1,0 +1,178 @@
+\clearpage
+\begingroup
+\phantomsection
+\addcontentsline{toc}{section}{Приложение.}
+\section*{Приложение}
+
+\lstdefinelanguage{llvm}{
+	sensitive=true,
+	alsoletter={\%},
+	% comments.
+	%    ; line comment
+	comment=[l]{;},
+	% strings.
+	%    "foo"
+	string=[b]{"},
+	% instructions.
+	%    ref: http://llvm.org/docs/LangRef.html#instruction-reference
+	keywords=[1]{
+add, addrspacecast, alloca, and, ashr, atomicrmw, bitcast, br, call, cmpxchg,
+extractelement, extractvalue, fadd, fcmp, fdiv, fence, fmul, fpext, fptosi,
+fptoui, fptrunc, frem, fsub, getelementptr, icmp, indirectbr, insertelement,
+insertvalue, inttoptr, invoke, landingpad, load, lshr, mul, or, phi, ptrtoint,
+resume, ret, sdiv, select, sext, shl, shufflevector, sitofp, srem, store, sub,
+switch, to, trunc, udiv, uitofp, unreachable, urem, va_arg, xor, zext
+	},
+	% directives.
+	%    ref: http://llvm.org/docs/LangRef.html
+	keywords=[2]{
+acq_rel, acquire, addrspace, alias, align, alignstack, alwaysinline, any,
+anyregcc, appending, arcp, arm_aapcs_vfpcc, arm_aapcscc, arm_apcscc, asm,
+atomic, attributes, available_externally, blockaddress, builtin, byval, c,
+catch, cc, ccc, cleanup, cold, coldcc, comdat, common, constant, datalayout,
+declare, default, define, dereferenceable, dllexport, dllimport, eq, exact,
+exactmatch, extern_weak, external, externally_initialized, false, fast, fastcc,
+filter, gc, ghccc, global, hidden, inalloca, inbounds, initialexec, inlinehint,
+inreg, intel_ocl_bicc, inteldialect, internal, jumptable, largest, linkonce,
+linkonce_odr, localdynamic, localexec, max, min, minsize, module, monotonic,
+msp430_intrcc, musttail, naked, nand, ne, nest, ninf, nnan, noalias, nobuiltin,
+nocapture, noduplicate, noduplicates, noimplicitfloat, noinline, nonlazybind,
+nonnull, noredzone, noreturn, nounwind, nsw, nsz, null, nuw, oeq, oge, ogt, ole,
+olt, one, opaque, optnone, optsize, ord, personality, prefix, preserve_allcc,
+preserve_mostcc, private, prologue, protected, ptx_device, ptx_kernel, readnone,
+readonly, release, returned, returns_twice, samesize, sanitize_address,
+sanitize_memory, sanitize_thread, section, seq_cst, sge, sgt, sideeffect,
+signext, singlethread, sle, slt, spir_func, spir_kernel, sret, ssp, sspreq,
+sspstrong, tail, target, thread_local, triple, true, type, ueq, uge, ugt, ule,
+ult, umax, umin, undef, une, unnamed_addr, uno, unordered, unwind, uselistorder,
+uselistorder_bb, uwtable, volatile, weak, weak_odr, webkit_jscc, x,
+x86_64_sysvcc, x86_64_win64cc, x86_fastcallcc, x86_stdcallcc, x86_thiscallcc,
+x86_vectorcallcc, xchg, zeroext, zeroinitializer
+	},
+	% types.
+	%    ref: http://llvm.org/docs/LangRef.html#type-system
+	keywords=[3]{
+i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i17, i18,
+i19, i20, i21, i22, i23, i24, i25, i26, i27, i28, i29, i30, i31, i32, i33, i34,
+i35, i36, i37, i38, i39, i40, i41, i42, i43, i44, i45, i46, i47, i48, i49, i50,
+i51, i52, i53, i54, i55, i56, i57, i58, i59, i60, i61, i62, i63, i64, i80, i512,
+void, half, float, double, fp128, x86_fp80, ppc_fp128, x86_mmx, label, metadata
+	},
+}
+
+\begin{lstlisting}[language=llvm,basicstyle=\small,caption=Пример LLVM IR]
+; ModuleID = '<main>'
+source_filename = "<null>"
+target datalayout = "e-m:o-i64:64-f80:128-n8:16:32:64-S128"
+target triple = "x86_64-apple-darwin19.2.0"
+
+define void @evaluateGraph() {
+entry:
+  call void @node_c()
+  call void @node_b()
+  call void @node_a()
+  call void @node_gemm_1()
+  call void @node_mse_loss()
+  ret void
+}
+
+define void @node_c() {
+entry:
+  call void @athn_allocate_v(i64 4361629848, i64 140345485599792, i64 140345485619416)
+  call void @MemoryLoaderLoad(i64 140732905091592, i64 140345485599792, i64 140345485619416)
+  ret void
+}
+
+define void @node_b() {
+entry:
+  call void @athn_allocate_v(i64 4361629848, i64 140345485599792, i64 140345485616152)
+  call void @MemoryLoaderLoad(i64 140732905091616, i64 140345485599792, i64 140345485616152)
+  ret void
+}
+
+define void @node_a() {
+entry:
+  call void @athn_allocate_v(i64 4361629848, i64 140345485599792, i64 140345485613576)
+  call void @MemoryLoaderLoad(i64 140732905091640, i64 140345485599792, i64 140345485613576)
+  ret void
+}
+
+define void @node_gemm_1() {
+entry:
+  call void @athn_allocate_v(i64 4361629848, i64 140345485599792, i64 140345485611632)
+  call void @athn_gemm_f(i64 4361629848, i64 140345485599792, i64 140345485619376, i64 140345485613576, i64 140345485616152, i64 140345485611632)
+  ret void
+}
+
+define void @node_mse_loss() {
+entry:
+  call void @athn_allocate_v(i64 4361629848, i64 140345485599792, i64 140345485620352)
+  call void @athn_mse_f(i64 4361629848, i64 140345485599792, i64 140345485611632, i64 140345485619416, i64 140345485620352)
+  ret void
+}
+
+declare void @MemoryLoaderLoad(i64, i64, i64)
+
+define void @optimizeGraph() {
+entry:
+  call void @athn_allocate_v(i64 4361629848, i64 140345485599792, i64 140345485573008)
+  call void @athn_fma_f(i64 4361629848, i64 140345485599792, i64 140345485620352, float 2.000000e+00, i64 140345485611632, float -2.000000e+00, i64 140345485573008)
+  call void @athn_allocate_v(i64 4361629848, i64 140345485599792, i64 140345485573088)
+  call void @athn_fill_f(i64 4361629848, i64 140345485599792, i64 140345485573088, float 0.000000e+00)
+  call void @athn_add_f(i64 4361629848, i64 140345485599792, i64 140345485573088, i64 140345485573008, i64 140345485573088)
+  call void @athn_allocate_v(i64 4361629848, i64 140345485599792, i64 140345485612688)
+  call void @athn_gemm_f(i64 4361629848, i64 140345485599792, i64 140345485592208, i64 140345485573088, i64 140345485616152, i64 140345485612688)
+  call void @athn_allocate_v(i64 4361629848, i64 140345485599792, i64 140345485612736)
+  call void @athn_gemm_f(i64 4361629848, i64 140345485599792, i64 140345485595808, i64 140345485613576, i64 140345485573088, i64 140345485612736)
+  call void @athn_allocate_v(i64 4361629848, i64 140345485599792, i64 140345485573088)
+  call void @athn_allocate_v(i64 4361629848, i64 140345485599792, i64 140345485573088)
+  call void @athn_fma_f(i64 4361629848, i64 140345485599792, i64 140345485612736, float 0xBE7AD7F2A0000000, i64 140345485616152, float 1.000000e+00, i64 140345485616152)
+  call void @athn_fma_f(i64 4361629848, i64 140345485599792, i64 140345485612688, float 0xBE7AD7F2A0000000, i64 140345485613576, float 1.000000e+00, i64 140345485613576)
+  ret void
+}
+
+; Function Attrs: alwaysinline nounwind uwtable
+define void @athn_add_f(i64 %device, i64 %allocator, i64 %arg0, i64 %arg1, i64 %arg2) #0 {
+  call void inttoptr (i64 4361623824 to void (i64, i64, i64, i64, i64)*)(i64 %device, i64 %allocator, i64 %arg0, i64 %arg1, i64 %arg2)
+  ret void
+}
+
+; Function Attrs: alwaysinline nounwind uwtable
+define void @athn_fma_f(i64 %device, i64 %allocator, i64 %arg0, float %arg1, i64 %arg2, float %arg3, i64 %arg4) #0 {
+  call void inttoptr (i64 4361624048 to void (i64, i64, i64, float, i64, float, i64)*)(i64 %device, i64 %allocator, i64 %arg0, float %arg1, i64 %arg2, float %arg3, i64 %arg4)
+  ret void
+}
+
+; Function Attrs: alwaysinline nounwind uwtable
+define void @athn_mse_f(i64 %device, i64 %allocator, i64 %arg0, i64 %arg1, i64 %arg2) #0 {
+  call void inttoptr (i64 4361624304 to void (i64, i64, i64, i64, i64)*)(i64 %device, i64 %allocator, i64 %arg0, i64 %arg1, i64 %arg2)
+  ret void
+}
+
+; Function Attrs: alwaysinline nounwind uwtable
+define void @athn_fill_f(i64 %device, i64 %allocator, i64 %arg0, float %arg1) #0 {
+  call void inttoptr (i64 4361624528 to void (i64, i64, i64, float)*)(i64 %device, i64 %allocator, i64 %arg0, float %arg1)
+  ret void
+}
+
+; Function Attrs: alwaysinline nounwind uwtable
+define void @athn_allocate_v(i64 %device, i64 %allocator, i64 %arg0) #0 {
+  call void inttoptr (i64 4361624688 to void (i64, i64, i64)*)(i64 %device, i64 %allocator, i64 %arg0)
+  ret void
+}
+
+; Function Attrs: alwaysinline nounwind uwtable
+define void @athn_hadamard_f(i64 %device, i64 %allocator, i64 %arg0, i64 %arg1, i64 %arg2, i64 %arg3) #0 {
+  call void inttoptr (i64 4361624768 to void (i64, i64, i64, i64, i64, i64)*)(i64 %device, i64 %allocator, i64 %arg0, i64 %arg1, i64 %arg2, i64 %arg3)
+  ret void
+}
+
+; Function Attrs: alwaysinline nounwind uwtable
+define void @athn_gemm_f(i64 %device, i64 %allocator, i64 %arg0, i64 %arg1, i64 %arg2, i64 %arg3) #0 {
+  call void inttoptr (i64 4361625024 to void (i64, i64, i64, i64, i64, i64)*)(i64 %device, i64 %allocator, i64 %arg0, i64 %arg1, i64 %arg2, i64 %arg3)
+  ret void
+}
+
+attributes #0 = { alwaysinline nounwind uwtable }
+\end{lstlisting}
+
