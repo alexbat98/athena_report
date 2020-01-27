@@ -64,5 +64,13 @@
         "publisher": "Packt Publishing",
         "pages": "314",
         "city": "Birmingham"
-    }
+    },
+{
+  "author": "Cliff Click",
+  "id": "click",
+  "lang": "english",
+  "year": "1995",
+  "title": "Global code motion/global value numbering"
+}
+
 ]
