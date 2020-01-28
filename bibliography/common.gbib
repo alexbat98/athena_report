@@ -107,5 +107,22 @@
         "lang": "english",
         "title": "Long short-term memory",
         "year": "1997"
-    }
+    },
+{
+  "author": "Arvind and Nikhil, R.S.",
+  "title": "Executing a program on the MIT tagged-token dataflow architecture",
+  "issn": "0018-9340",
+  "id": "mit_tagged_token",
+  "year": "1990",
+  "lang": "english",
+  "abstract": ["The MIT tagged-token dataflow project has an unconventional, but integrated approach to general-purpose",
+    "high-performance parallel computing. Rather than extending conventional sequential languages, the authors use Id, a",
+    "high-level language with fine-grained parallelism and determinacy implicit in its operational semantics. Id programs",
+    "are compiled to dynamic dataflow graphs, a parallel machine language. Dataflow graphs are directly executed on the",
+    "MIT tagged-token dataflow architecture (TTDA), a novel multiprocessor architecture. Dataflow research has advanced",
+    "significantly in the last few years; in this paper, the authors provide an overview of our current thinking, by",
+    "describing example Id programs, their compilation to dataflow graphs, and their execution on the TTDA. Finally, the",
+    "authors describe related work and the status of our project."],
+  "journal": "IEEE Transactions on Computers (Institute of Electrical and Electronics Engineers); (USA)"
+}
 ]
