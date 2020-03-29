@@ -21,6 +21,8 @@
 \input{./styles/images.tex}
 \input{./styles/bibliography.tex}
 
+\bibliography{bibliography/common.bib,bibliography/compiler.bib}
+
 \begin{document}
 
 \input{include/thesis_title.tex}
@@ -30,9 +32,8 @@
 \tableofcontents
 
 % добавляйте материал здесь
-\input{src/intro.tex}
-\input{src/lit_hist.tex}
-\input{src/lit_modern.tex}
+\input{src/th_intro.tex}
+\input{src/th_lit.tex}
 \input{src/task.tex}
 \input{src/th_tensorflow.tex}
 \input{src/th_llvm.tex}
@@ -40,5 +41,8 @@
 \input{src/conclusion.tex}
 \input{src/appendix.tex}
 
-\input{output/bibliography.tex}
+%\input{output/bibliography.tex}
+\clearpage
+\addcontentsline{toc}{section}{Список литературы}
+\printbibliography
 \end{document}
