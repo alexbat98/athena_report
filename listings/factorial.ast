@@ -1,0 +1,36 @@
+TranslationUnitDecl 0x1657da8 <<invalid sloc>> <invalid sloc>
+|-TypedefDecl 0x1658640 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
+| `-BuiltinType 0x1658340 '__int128'
+|-TypedefDecl 0x16586b0 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'
+| `-BuiltinType 0x1658360 'unsigned __int128'
+|-TypedefDecl 0x16589b8 <<invalid sloc>> <invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'
+| `-RecordType 0x1658790 'struct __NSConstantString_tag'
+|   `-Record 0x1658708 '__NSConstantString_tag'
+|-TypedefDecl 0x1658a50 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'
+| `-PointerType 0x1658a10 'char *'
+|   `-BuiltinType 0x1657e40 'char'
+|-TypedefDecl 0x1658d48 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'struct __va_list_tag [1]'
+| `-ConstantArrayType 0x1658cf0 'struct __va_list_tag [1]' 1 
+|   `-RecordType 0x1658b30 'struct __va_list_tag'
+|     `-Record 0x1658aa8 '__va_list_tag'
+`-FunctionDecl 0x16b7a50 <factorial.c:1:1, line:5:1> line:1:5 referenced factorial 'int (int)'
+  |-ParmVarDecl 0x16b7988 <col:15, col:19> col:19 used n 'int'
+  `-CompoundStmt 0x16b7d70 <col:22, line:5:1>
+    |-IfStmt 0x16b7be8 <line:2:3, line:3:12>
+    | |-BinaryOperator 0x16b7b98 <line:2:7, col:12> 'int' '=='
+    | | |-ImplicitCastExpr 0x16b7b80 <col:7> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x16b7b40 <col:7> 'int' lvalue ParmVar 0x16b7988 'n' 'int'
+    | | `-IntegerLiteral 0x16b7b60 <col:12> 'int' 1
+    | `-ReturnStmt 0x16b7bd8 <line:3:5, col:12>
+    |   `-IntegerLiteral 0x16b7bb8 <col:12> 'int' 1
+    `-ReturnStmt 0x16b7d60 <line:4:3, col:29>
+      `-BinaryOperator 0x16b7d40 <col:10, col:29> 'int' '*'
+        |-ImplicitCastExpr 0x16b7d28 <col:10> 'int' <LValueToRValue>
+        | `-DeclRefExpr 0x16b7c00 <col:10> 'int' lvalue ParmVar 0x16b7988 'n' 'int'
+        `-CallExpr 0x16b7d00 <col:14, col:29> 'int'
+          |-ImplicitCastExpr 0x16b7ce8 <col:14> 'int (*)(int)' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x16b7c20 <col:14> 'int (int)' Function 0x16b7a50 'factorial' 'int (int)'
+          `-BinaryOperator 0x16b7c98 <col:24, col:28> 'int' '-'
+            |-ImplicitCastExpr 0x16b7c80 <col:24> 'int' <LValueToRValue>
+            | `-DeclRefExpr 0x16b7c40 <col:24> 'int' lvalue ParmVar 0x16b7988 'n' 'int'
+            `-IntegerLiteral 0x16b7c60 <col:28> 'int' 1
