@@ -102,10 +102,10 @@ OpenCL C, CUDA, RenderScript) для LLVM. Благодаря модульной
 кода, атилита автоматического форматирования, языковой сервер и т.д.
 
 \begin{figure}[h]
-  \label{fig:clang_core}
   \centering
   \includegraphics[width=\textwidth]{clangTutorial-18}
   \caption{Ключевые компоненты Clang. Источник: \cite{VanHaagstretSvenARMandStulova2019}}
+  \label{fig:clang_core}
 \end{figure}
 % https://www.youtube.com/watch?v=5kkMpJpIGYU
 % http://llvm.org/devmtg/2019-10/talk-abstracts.html#tut8
@@ -129,16 +129,25 @@ Clang предоставляет GCC- и MSVC-совместимые драйв�
 превращать AST обратно в исходный код, что позволяет строить на его основе
 различные инструменты автоматизации разработки.
 \begin{figure}[h]
-  \label{fig:clang_core}
   \centering
   \includegraphics[width=\textwidth]{clangTutorial-48}
   \caption{Основные классы Clang AST. Источник: \cite{VanHaagstretSvenARMandStulova2019}}
+  \label{fig:clang_core}
 \end{figure}
 
 Ниже представлен исходный код на языке C.
 \lstinputlisting[language=C,caption={Пример программы на языке C}]{listings/factorial.c}
 Текстовое представление AST для этого фрагмента кода можно увидеть в листинге
-\ref{lst:clang_ast} Приложения.
+\ref{lst:clang_ast} Приложения. На рис. \ref{fig:clang_ast} можно увидеть
+графическое представление данного дерева.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{ast_factorial}
+  \caption{Графическое представление Clang AST} 
+  \label{fig:clang_ast}
+\end{figure}
+
 % TODO example of C function, AST, and AST Graph
 
 \subsubsection{Генерация кода}
@@ -147,7 +156,6 @@ Clang предоставляет GCC- и MSVC-совместимые драйв�
 представление. Для получения LLVM IR из синтаксического дерева Clang использует
 алгоритм обхода графа в глубину. Пример полученного IR можно увидеть в листинге
 \ref{lst:llvm_ir_clang} Приложения.
-% TODO example of LLVM IR
 
 \subsection{MLIR}
 MLIR -- это новая инфраструктура для разработки промежуточных представлений.
