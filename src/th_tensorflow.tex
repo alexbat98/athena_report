@@ -2,6 +2,25 @@
 
 \section{Детальный обзор Tensorflow}
 
+В таблице \ref{tbl:comp_table} сравниваются характеристики наиболее
+распространенных фреймворков. Из неё видно, что наиболее богатым по функционалу
+является фреймворк Tensorflow от компании Google. Он же является наиболее
+популярным. Именно поэтому рассмотрение основных архитектурных особенностей
+фреймворков для искусственного интеллекта будет производиться на примере Tensorflow.
+\begin{sidewaystable}
+\caption{Сравнительный обзор фреймворков}
+\label{tbl:comp_table}
+\begin{tabularx}{\textwidth}{@{}ZZZZZZZ@{}}
+\toprule
+\textbf{Фреймворк} & \textbf{Лицензия}       & \textbf{Ускорители}                    & \textbf{Модель распределенных вычислений}  & \textbf{Сложность добавления новых операций} & \textbf{Сложность добавления поддержки новой архитектуры} & \textbf{Поддерживаемые ОС}          \\ \midrule
+Tensorflow         & Apache 2.0              & CUDA, Google TPU, Qualcomm Hexagon DSP & Сервер параметров                          & Средняя                                      & Высокая                                                   & Windows, Linux, macOS, Android, iOS \\
+Caffe              & BSD                     & CUDA                                   & Нет                                        & Высокая                                      & Высокая                                                   & Windows, Linux, macOS               \\
+Theano             & Proprietary open source & CUDA                                   & Нет (только с помощью сторонних библиотек) & Низкая                                       & Средняя                                                   & Windows, Linux, macOS               \\
+PyTorch            & Proprietary open source & CUDA                                   & Нет (только с помощью сторонних библиотек)  & Средняя                                      & Высокая                                                   & Windows, Linux                      \\
+CNTK               & MIT                     & CUDA                                   & Сервер параметров                          & Высокая                                      & Высокая                                                   & Windows, Linux                      \\
+Glow               & Apache 2.0              & OpenCL                                 & Нет                                        & Средняя                                      & Низкая                                                    & Windows, Linux, macOS               \\ \bottomrule
+\end{tabularx}
+\end{sidewaystable}
 \subsection{Основные понятия}
 
 В TensorFlow вычисления описываются с помощью графа вычислений (англ.
