@@ -8,6 +8,7 @@ bib: generate_gbib_source
 
 pdf:
 	#latexmk --output-directory=output/ -xelatex main.tex
+	latexmk --output-directory=output/ -xelatex report.tex
 	latexmk --output-directory=output/ -xelatex thesis.tex
 
 clean:
