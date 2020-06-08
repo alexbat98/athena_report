@@ -15,6 +15,8 @@
 \usepackage{hyphenat}
 
 \usepackage[hidelinks]{hyperref}
+\definecolor{polarnight}{RGB}{59,66,82}
+\renewcommand\UrlFont{\color{polarnight}\rmfamily\itshape}
 
 \input{./styles/text.tex}
 \input{./styles/math.tex}
@@ -22,7 +24,7 @@
 \input{./styles/images.tex}
 \input{./styles/bibliography.tex}
 
-\bibliography{bibliography/common.bib,bibliography/compiler.bib,bibliography/specs.bib}
+\bibliography{bibliography/common.bib,bibliography/compiler.bib,bibliography/specs.bib,bibliography/coauthor.bib}
 
 \begin{document}
 
@@ -37,7 +39,7 @@
 \input{src/th_lit.tex}
 \input{src/th_tensorflow.tex}
 \input{src/th_llvm.tex}
-\input{src/compiler.tex}
+\input{src/th_compiler.tex}
 \input{src/conclusion.tex}
 \input{src/appendix.tex}
 
