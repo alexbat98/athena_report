@@ -6,6 +6,9 @@
 \usepackage{setspace}
 \usepackage{pgfplots}
 
+\usepackage{longtable}
+\usepackage{tabularx, tabu, tabulary}  %таблицы с автоматически подбирающейся шириной столбцов
+
 \usepackage{geometry}
 \geometry{left=2.5cm}
 \geometry{right=1.5cm}
@@ -35,16 +38,17 @@
 \tableofcontents
 
 % добавляйте материал здесь
+\input{src/acronyms.tex}
 \input{src/th_intro.tex}
 \input{src/th_lit.tex}
 \input{src/th_tensorflow.tex}
 \input{src/th_llvm.tex}
 \input{src/th_compiler.tex}
 \input{src/conclusion.tex}
-\input{src/appendix.tex}
 
-%\input{output/bibliography.tex}
 \clearpage
 \addcontentsline{toc}{section}{Список литературы}
 \printbibliography
+
+\input{src/appendix.tex}
 \end{document}

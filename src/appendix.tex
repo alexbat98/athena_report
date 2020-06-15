@@ -1,13 +1,20 @@
 \clearpage
 \begingroup
 \phantomsection
-\addcontentsline{toc}{section}{Приложение: тексты программных модулей}
-\section*{Приложение: тексты программных модулей}
+\addcontentsline{toc}{section}{Приложение 1. Тексты программных модулей}
+\section*{Приложение 1. Тексты программных модулей}
 
+\phantomsection
+\addcontentsline{toc}{subsection}{П1.1  Результат работы различных стадий компилятора Clang}
+\subsection*{П1.1. Результат работы различных стадий компилятора Clang}
 \lstinputlisting[label={lst:clang_ast},caption={Текстовое представление Clang AST}]{listings/factorial.ast}
 
 \lstinputlisting[language=llvm,label={lst:llvm_ir_clang},caption={LLVM IR, сгенерированный Clang}]{listings/factorial.ll}
 
-\lstinputlisting[language=athgraph,label={lst:ath_graph_add},caption={Код на языке высокоуровневого диалекта}]{listings/add_graph.mlir}
-\lstinputlisting[language=athgraph,label={lst:ath_rt_add},caption={Код на языке низкоуровневого диалекта}]{listings/add_rt.mlir}
-\lstinputlisting[language=llvm,label={lst:llvm_add},caption={Итоговый LLVM IR}]{listings/add_llvm.ll}
+\phantomsection
+\addcontentsline{toc}{subsection}{П1.2  Результат работы различных стадий компилятора графа вычислений}
+\subsection*{П1.2. Результат работы различных стадий компилятора графа вычислений}
+\lstinputlisting[language=athgraph,label={lst:ath_graph_add},caption={Код на языке высокоуровневого диалекта для функции сложения}]{listings/add_graph.mlir}
+\lstinputlisting[language=athgraph,label={lst:ath_rt_add},caption={Код на языке низкоуровневого диалекта для функции сложения}]{listings/add_rt.mlir}
+\lstinputlisting[language=llvm,label={lst:llvm_add},caption={Итоговый LLVM IR для функции сложения}]{listings/add_llvm.ll}
+\lstinputlisting[language=athgraph,label={lst:logreg_graph},caption={Код на языке высокоуровневого диалекта для модели логистической регрессии}]{listings/logreg_graph.mlir}
